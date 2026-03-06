@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Actividad 1 UT2 - Estructura básica HTML5 y diferencias con XHTML">
+    <meta name="author" content="Sergio Moreno Gil">
+    <title>Actividad 1 – Estructura básica HTML5</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f7; color: #222; }
+
+        header {
+            background: #1a1a2e;
+            color: white;
+            padding: 2rem 3rem;
+            border-bottom: 4px solid #e32d91;
+        }
+        header h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+        header p { color: #aaa; font-size: 0.95rem; }
+
+        nav {
+            background: #16213e;
+            padding: 0.8rem 3rem;
+        }
+        nav ul { list-style: none; display: flex; gap: 2rem; }
+        nav ul li a {
+            color: #e32d91;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        nav ul li a:hover { color: white; }
+
+        main { max-width: 900px; margin: 2rem auto; padding: 0 2rem; }
+
+        section, article {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        section h2, article h2 {
+            color: #e32d91;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-left: 4px solid #e32d91;
+            padding-left: 0.8rem;
+        }
+        p { line-height: 1.7; margin-bottom: 0.8rem; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.92rem;
+        }
+        th {
+            background: #1a1a2e;
+            color: white;
+            padding: 0.7rem 1rem;
+            text-align: left;
+        }
+        td { padding: 0.65rem 1rem; border-bottom: 1px solid #eee; }
+        tr:nth-child(even) td { background: #f9f9f9; }
+
+        code {
+            background: #1a1a2e;
+            color: #e32d91;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.88rem;
+        }
+
+        aside {
+            background: #fff8fd;
+            border: 1px solid #e32d91;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+        }
+        aside h3 { color: #e32d91; margin-bottom: 0.8rem; }
+
+        footer {
+            background: #1a1a2e;
+            color: #aaa;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.88rem;
+            margin-top: 2rem;
+        }
+        footer span { color: #e32d91; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Actividad 1 – Estructura básica HTML5</h1>
+        <p>Lenguajes de Marcas y Sistemas de Gestión de Información · Sergio Moreno Gil</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#estructura">Estructura HTML5</a></li>
+            <li><a href="#diferencias">HTML vs XHTML</a></li>
+            <li><a href="#justificacion">Cuándo usar cada uno</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section id="estructura">
+            <h2>1. Documento HTML5 básico</h2>
+            <p>
+                Todo documento HTML5 comienza con <code>&lt;!DOCTYPE html&gt;</code>, que indica al navegador
+                que debe interpretar el documento usando el estándar HTML5. La codificación
+                <code>UTF-8</code> se declara en el <code>&lt;head&gt;</code> mediante
+                <code>&lt;meta charset="UTF-8"&gt;</code>, permitiendo el uso de caracteres especiales
+                de cualquier idioma.
+            </p>
+            <p>
+                La estructura fundamental de este documento incluye las etiquetas semánticas de HTML5:
+                <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+                <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>
+                y <code>&lt;footer&gt;</code>, que aportan significado estructural al contenido.
+            </p>
+        </section>
+
+        <section id="diferencias">
+            <h2>2. Diferencias principales entre HTML y XHTML</h2>
+            <p>HTML y XHTML comparten el mismo propósito —definir la estructura de páginas web— pero difieren significativamente en su sintaxis y rigor:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Criterio</th>
+                        <th>HTML5</th>
+                        <th>XHTML</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sintaxis</td>
+                        <td>Flexible y permisiva</td>
+                        <td>Estricta (basada en XML)</td>
+                    </tr>
+                    <tr>
+                        <td>Cierre de etiquetas</td>
+                        <td>Opcional en algunas etiquetas</td>
+                        <td>Obligatorio siempre</td>
+                    </tr>
+                    <tr>
+                        <td>Mayúsculas/minúsculas</td>
+                        <td>Indiferente</td>
+                        <td>Solo minúsculas</td>
+                    </tr>
+                    <tr>
+                        <td>Etiquetas vacías</td>
+                        <td><code>&lt;br&gt;</code>, <code>&lt;img&gt;</code></td>
+                        <td><code>&lt;br /&gt;</code>, <code>&lt;img /&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td>Atributos</td>
+                        <td>Sin comillas permitido</td>
+                        <td>Siempre entre comillas</td>
+                    </tr>
+                    <tr>
+                        <td>DOCTYPE</td>
+                        <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                        <td>Declaración DTD compleja</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo MIME</td>
+                        <td><code>text/html</code></td>
+                        <td><code>application/xhtml+xml</code></td>
+                    </tr>
+                    <tr>
+                        <td>Tolerancia a errores</td>
+                        <td>Alta (el navegador los corrige)</td>
+                        <td>Nula (error = página en blanco)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <article id="justificacion">
+            <h2>3. Justificación: cuándo usar cada uno</h2>
+            <p>
+                <strong>HTML5</strong> es la elección recomendada para la gran mayoría de proyectos web modernos.
+                Su amplia compatibilidad con todos los navegadores, su flexibilidad y las nuevas etiquetas
+                semánticas lo convierten en el estándar dominante. Es ideal para sitios web, aplicaciones web,
+                CMS como WordPress, y cualquier proyecto donde la productividad y la compatibilidad sean prioritarias.
+            </p>
+            <p>
+                <strong>XHTML</strong> tiene sentido cuando el documento debe integrarse en un ecosistema XML
+                (procesado con parsers XML, transformaciones XSLT o intercambio de datos con sistemas externos).
+                Su rigor sintáctico garantiza documentos bien formados, útil en entornos donde la consistencia
+                estructural es crítica.
+            </p>
+            <p>
+                En la práctica actual, HTML5 ha desplazado a XHTML como estándar principal, y es la opción
+                recomendada por el W3C para el desarrollo web contemporáneo.
+            </p>
+        </article>
+
+        <aside>
+            <h3>💡 Nota sobre este documento</h3>
+            <p>
+                Esta página es la entrega práctica de la Actividad 1 de la UT2 del módulo
+                <strong>Lenguajes de Marcas y Sistemas de Gestión de Información</strong>.
+                El propio documento que estás visualizando demuestra el uso correcto de la estructura
+                HTML5, incluyendo DOCTYPE, UTF-8, etiquetas semánticas y CSS integrado.
+            </p>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>Actividad 1 · UT2 · <span>Sergio Moreno Gil</span> · ASIX Ciberseguridad · LinkiaFP 2025</p>
+    </footer>
+
+</body>
+</html>
